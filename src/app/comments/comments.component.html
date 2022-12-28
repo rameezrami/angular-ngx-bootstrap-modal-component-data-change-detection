@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Comments</h4>
+  <button
+    type="button"
+    class="btn-close close pull-right"
+    aria-label="Close"
+    (click)="closeModal()"
+  >
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <button class="btn btn-primary mb-2" (click)="changeModalData()">
+    CLICK TO CHANGE MODAL DATA
+  </button>
+  <div *ngFor="let c of comments" class="alert alert-primary" role="alert">
+    {{ c.comment }}
+  </div>
+  <p *ngIf="comments && comments.length === 0">No comments</p>
+</div>
